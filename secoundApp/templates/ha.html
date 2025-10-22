@@ -1,0 +1,110 @@
+{% extends 'base.html'%}
+
+{% block body %}
+{% block title %} {% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Page </title>
+      
+
+</head>
+<body>
+    <div class="show"><h1>My login page</h1></div>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="name1" placeholder="First Name" required>
+            <input type="text" name="name2" placeholder="Last Name" required>
+            <button type="submit">Login</button>
+        </form>
+        {{first_name}}  {{last_name}}
+
+        <p>Don't have an account? <a href="#">Register</a></p>
+        
+    </div>
+
+    
+</body>
+</html>
+<style>
+
+
+
+.show h1{
+    text-align: center;
+    color: rgb(234, 8, 45);
+}
+.login-box {
+    
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+
+
+    
+    
+}
+
+/* Header */
+.login-box h2 {
+    margin-bottom: 25px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Input Fields */
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+    
+}
+
+.login-box input:focus {
+    border-color: #4e54c8;
+    box-shadow: 0 0 5px rgba(78,84,200,0.5);
+}
+
+/* Button */
+.login-box button {
+    width: 100%;
+    background: #4e54c8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background: #19ce5e;
+}
+
+/* Footer link */
+.login-box p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+</style>
+
+{% endblock %}
+
+
